@@ -24,7 +24,7 @@ cache:
 
 branches:
   only:
-    - master
+    - travis
 
 cache:
   - npm
@@ -33,9 +33,8 @@ cache:
 before_script:
   - composer self-update
   - composer install --prefer-source --no-interaction
-  - npm install -g npm@latest
   - npm install
 
-script: 
+script:
   - phpunit
   - npm test
